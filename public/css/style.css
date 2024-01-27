@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 body{
-    font-family: "Lato", sans-serif;
+    font-family: "Nunito", sans-serif;
     background-color: #FFFFFF;
+}
+.title{
+    font-size: 22px;
+}
+.nav-link{
+    color: #EEEEEE;
+}
+.nav-link:hover{
+    color: #FFFFFF !important;
 }
 
 .login-container{
@@ -13,19 +22,51 @@ body{
     background-color: #EEEEEE;
 }
 .my-btn{
-    background-color: #FFD24C;
+    background-color: #FFB72B;
     color: #EEEEEE;
     width: 100%;
 }
-.my-btn:hover{
-    background-color: #FFE69A;
-    color: #AAAAAA;
+.my-btn2{
+    color: #FFB72B;
+    background-color: #EEEEEE;
 }
-
+.my-btn3{
+    color: #EEEEEE;
+    background-color: #FFB72B;
+}
+.my-btn:hover{
+    background-color: #92B4EC;
+    color: #EEEEEE;
+}
+.my-btn2:hover{
+    background-color: #FFB72B;
+    color: #EEEEEE;
+}
+.my-btn3:hover{
+    background-color: #FFE69A;
+    color: #FFFFFF;
+}
+.my-btn:active, .my-btn2:active, .my-btn3:active{
+    background-color: #DDDDDD !important;
+    color: #434343 !important;
+}.export-section .btn{
+    width: auto;
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
 
 .text-link{
     color: #FFD24C;
 }
 .my-bg-yellow{
     background-color: #FFD24C;
+}
+.my-bg-blue{
+    background-color: #92B4EC;
 }
