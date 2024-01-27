@@ -12,6 +12,7 @@ class Resident extends Model
     protected $fillable = [
         'nik',
         'name',
+        'image_path',
         'gender',
         'birthplace',
         'birthdate',

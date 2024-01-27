@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nik');
             $table->string('name');
+            $table->string('image_path');
             $table->enum('gender', ['Male', 'Female']);
             $table->string('birthplace');
             $table->date('birthdate');

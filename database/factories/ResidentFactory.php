@@ -19,6 +19,7 @@ class ResidentFactory extends Factory
         return [
             'nik' => fake()->nik(),
             'name' => fake()->name(),
+            'image_path' => 'resident_pictures/profile.jpg',
             'gender' => fake()->randomElement(['Male', 'Female']),
             'birthplace' => $this->faker->city,
             'birthdate' => $this->faker->dateTime('-17 years'),
