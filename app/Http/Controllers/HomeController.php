@@ -12,4 +12,7 @@ class HomeController extends Controller
         $data = Resident::paginate(10);
         return view('home', compact('data'));
     }
+    public function addForm(){
+        return view('add');
+    }
 }

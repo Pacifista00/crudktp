@@ -95,12 +95,12 @@
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <form action="/resident/{{$item->id}}/update" method="POST">
+                                        <form action="/resident/{{$item->id}}/update" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                        <div class="modal-body">
+                                            <div class="modal-body">
                                                 <div class="mb-1">
                                                     <label for="photo" class="col-form-label">Foto:</label>
-                                                    <input type="file" class="form-control" id="photo" name="photo">
+                                                    <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
                                                 </div>
                                                 <div class="mb-1">
                                                     <label for="nik" class="col-form-label">NIK:</label>
@@ -113,7 +113,7 @@
                                                 <div class="mb-1">
                                                     <label for="gender" class="col-form-label">Jenis Kelamin:</label>
                                                     <select class="form-select" aria-label="Default select example" name="gender">
-                                                        <option value="{{ $item->gender }}" disabled>{{ $item->gender }}</option>
+                                                        <option value="{{ $item->gender }}" >{{ $item->gender }}</option>
                                                         <option value="Pria">Pria</option>
                                                         <option value="Wanita">Wanita</option>
                                                     </select>
@@ -129,7 +129,7 @@
                                                 <div class="mb-1">
                                                     <label for="religion" class="col-form-label">Agama:</label>
                                                     <select class="form-select" aria-label="Default select example" name="religion">
-                                                        <option value="{{ $item->religion }}" disabled>{{ $item->religion }}</option>
+                                                        <option value="{{ $item->religion }}">{{ $item->religion }}</option>
                                                         <option value="Islam">Islam</option>
                                                         <option value="Kristen">Kristen</option>
                                                         <option value="Hindu">Hindu</option>
@@ -140,15 +140,13 @@
                                                     <label for="profession" class="col-form-label">Pekerjaan:</label>
                                                     <input type="text" class="form-control" id="profession" name="profession" value="{{ $item->profession }}">
                                                 </div>
-                                        </div>
-                                        
-                                        <div class="modal-footer">
-                                            
+                                            </div>
+        
+                                            <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                 <button type="submit" class="btn my-btn">Edit</button>
-                                            
-                                        </div>
-                                    </form>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
@@ -164,4 +162,4 @@
     </div> 
     
     @include('./partials/footer')
-@endsection
+    @endsection

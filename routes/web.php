@@ -30,7 +30,10 @@ Route::group(['middleware'=>'auth'],function () {
     Route::group(['middleware'=>'admin'],function () {
         Route::post('/resident/{id}/delete', [ResidentController::class, 'destroy']);
         Route::post('/resident/{id}/update', [ResidentController::class, 'update']);
+        Route::get('/create', [HomeController::class, 'addForm']);
+        Route::post('/create', [ResidentController::class, 'store']);
     });
+
     Route::get('/home', [HomeController::class, 'index']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
