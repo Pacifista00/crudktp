@@ -20,11 +20,9 @@ class ResidentFactory extends Factory
             'nik' => fake()->nik(),
             'name' => fake()->name(),
             'image_path' => 'resident_pictures/profile.jpg',
-            'gender' => fake()->randomElement(['Male', 'Female']),
-            'birthplace' => $this->faker->city,
+            'gender' => fake()->randomElement(['Pria', 'Wanita']),
             'birthdate' => $this->faker->dateTime('-17 years'),
             'address' => $this->faker->address,
-            'city' => $this->faker->city,
             'religion' => fake()->randomElement(['Islam', 'Kristen', 'Hindu', 'Buddha']),
             'profession' => fake()->jobTitle,
         ];

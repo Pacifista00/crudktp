@@ -16,11 +16,9 @@ return new class extends Migration
             $table->string('nik');
             $table->string('name');
             $table->string('image_path');
-            $table->enum('gender', ['Male', 'Female']);
-            $table->string('birthplace');
+            $table->enum('gender', ['Pria', 'Wanita']);
             $table->date('birthdate');
             $table->string('address');
-            $table->string('city');
             $table->string('religion');
             $table->string('profession');
             $table->timestamps();

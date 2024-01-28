@@ -14,7 +14,6 @@ class Resident extends Model
         'name',
         'image_path',
         'gender',
-        'birthplace',
         'birthdate',
         'address',
         'religion',

@@ -2,10 +2,18 @@
 
 body{
     font-family: "Nunito", sans-serif;
-    background-color: #FFFFFF;
+    background-color: #F6F4EB;
 }
 .title{
     font-size: 22px;
+}
+.table-transparent, .table-transparent th, .table-transparent td{
+    background-color: transparent;
+}
+.resident-picture{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
 }
 .nav-link{
     color: #EEEEEE;
@@ -16,40 +24,40 @@ body{
 
 .login-container{
     min-height: 100vh;
-    background-image: linear-gradient(30deg, #FFD24C, #92B4EC);
+    background-image: linear-gradient(30deg, #91C8E4, #4682A9);
 }
 .my-card{
-    background-color: #EEEEEE;
+    background-color: #FFFFFF;
 }
-.my-btn{
-    background-color: #FFB72B;
-    color: #EEEEEE;
-    width: 100%;
-}
+
 .my-btn2{
-    color: #FFB72B;
-    background-color: #EEEEEE;
-}
-.my-btn3{
-    color: #EEEEEE;
-    background-color: #FFB72B;
-}
-.my-btn:hover{
-    background-color: #92B4EC;
-    color: #EEEEEE;
+    border: none;
+    background-color: #E1E1E1;
+    color: #4682A9;
 }
 .my-btn2:hover{
-    background-color: #FFB72B;
+    background-color: #DDDDDD;
     color: #EEEEEE;
 }
-.my-btn3:hover{
-    background-color: #FFE69A;
-    color: #FFFFFF;
+.my-btn2:active{
+    background-color: #E1E1E1 !important;
+    color: #4682A9 !important;
 }
-.my-btn:active, .my-btn2:active, .my-btn3:active{
-    background-color: #DDDDDD !important;
-    color: #434343 !important;
-}.export-section .btn{
+.my-btn{
+    border: none;
+    background-color: #749BC2;
+    color: #EEEEEE;
+}
+.my-btn:hover{
+    background-color: #4682A9;
+    color: #EEEEEE;
+}
+.my-btn:active{
+    background-color: #749BC2 !important;
+    color: #EEEEEE !important;
+}
+
+.export-section .btn{
     width: auto;
 }
 .navbar-toggler{
@@ -62,11 +70,18 @@ body{
 }
 
 .text-link{
-    color: #FFD24C;
+    color: #4682A9;
 }
 .my-bg-yellow{
-    background-color: #FFD24C;
+    background-color: #F4D160;
 }
 .my-bg-blue{
-    background-color: #92B4EC;
+    background-color: #91C8E4;
+}
+.my-bg-darkblue{
+    background-color: #4682A9;
+}
+.my-alert{
+    background-color: #EEEEEE;
+    color: #4682A9;
 }

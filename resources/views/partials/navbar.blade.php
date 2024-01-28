@@ -18,7 +18,7 @@
                 <li class="nav-item">
                     <form action="/logout" method="POST">
                         @csrf
-                        <button type="submit" class="btn my-btn2 mx-1 px-3 rounded-pill" style="width: 100%;">LOGOUT</button>
+                        <button type="submit" class="btn my-btn mx-1 px-3 rounded-pill" style="width: 100%;">LOGOUT</button>
                     </form>
                 </li>
             </ul>

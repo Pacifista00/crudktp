@@ -5,7 +5,7 @@
         <div class="card-body">
             <h2 class="text-center mb-3">Register</h2>
             @if ($errors->any())
-                <div class="alert alert-danger p-2" role="alert">
+                <div class="alert my-alert p-2" role="alert">
                     @foreach ($errors->all() as $error)
                         <small>{{ $error }}</small><br>
                     @endforeach
@@ -25,7 +25,7 @@
                     <label for="passwordconfirm">Konfirmasi Password</label>
                     <input type="password" class="form-control rounded-5" id="passwordconfirm" name="passwordconfirm">
                 </div>
-                <button type="submit" class="btn my-btn rounded-5">Register</button>
+                <button type="submit" class="btn my-btn rounded-5" style="width: 100%;">Register</button>
             </form>
             <hr>
             <p>Sudah punya akun? Silahkan <a class="text-link" href="/">Login</a></p>
