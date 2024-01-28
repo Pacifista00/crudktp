@@ -4,45 +4,62 @@ body{
     font-family: "Nunito", sans-serif;
     background-color: #F6F4EB;
 }
+.login-container{
+    min-height: 100vh;
+    background-image: linear-gradient(30deg, #91C8E4, #4682A9);
+}
 .title{
     font-size: 22px;
 }
-.table-transparent, .table-transparent th, .table-transparent td{
-    background-color: transparent;
-}
-.resident-picture{
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-}
+
+/* navbar */
 .nav-link{
     color: #EEEEEE;
 }
 .nav-link:hover{
     color: #FFFFFF !important;
 }
-
-.login-container{
-    min-height: 100vh;
-    background-image: linear-gradient(30deg, #91C8E4, #4682A9);
-}
-.my-card{
-    background-color: #FFFFFF;
-}
-
-.my-btn2{
+.navbar-toggler{
     border: none;
-    background-color: #E1E1E1;
-    color: #4682A9;
 }
-.my-btn2:hover{
-    background-color: #DDDDDD;
-    color: #EEEEEE;
+.navbar-toggler:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
-.my-btn2:active{
-    background-color: #E1E1E1 !important;
+/* end navbar */
+
+/* table */
+.table-transparent, .table-transparent th, .table-transparent td{
+    background-color: transparent;
+}
+.export-section .btn{
+    width: auto;
+}
+.resident-picture{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagination li {
+    margin: 0 5px;
+}
+.pagination a{
     color: #4682A9 !important;
 }
+.pagination .page-item.active .page-link {
+    background-color: #4682A9;
+    border-color: #4682A9;
+}
+/* end table */
+
+/* button */
 .my-btn{
     border: none;
     background-color: #749BC2;
@@ -56,19 +73,35 @@ body{
     background-color: #749BC2 !important;
     color: #EEEEEE !important;
 }
-
-.export-section .btn{
-    width: auto;
-}
-.navbar-toggler{
+.my-btn2{
     border: none;
+    background-color: #E1E1E1;
+    color: #4682A9;
 }
-.navbar-toggler:focus{
-    outline: none;
+.my-btn2:hover{
+    background-color: #DDDDDD;
+    color: #EEEEEE;
+}
+.my-btn2:active{
+    background-color: #E1E1E1 !important;
+    color: #4682A9 !important;
+}
+.my-btn-red{
     border: none;
-    box-shadow: none;
+    background-color: #FF6868;
+    color: #EEEEEE;
 }
+.my-btn-red:hover{
+    background-color: #DDDDDD;
+    color: #EEEEEE;
+}
+.my-btn-red:active{
+    background-color: #FF6868 !important;
+    color: #EEEEEE !important;
+}
+/* end button */
 
+/* text & background */
 .text-link{
     color: #4682A9;
 }
@@ -83,5 +116,6 @@ body{
 }
 .my-alert{
     background-color: #EEEEEE;
-    color: #4682A9;
+    color: #FF6868;
 }
+/* end text & background */

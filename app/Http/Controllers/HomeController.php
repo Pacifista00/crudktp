@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Resident;
+use App\Http\Resources\ResidentResource;
 
 class HomeController extends Controller
 {
