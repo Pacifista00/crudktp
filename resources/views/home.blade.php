@@ -1,7 +1,7 @@
 @extends('./layouts/main')
 @section('view')
     @include('./partials/navbar')
-    <div class="container pt-4">
+    <div class="container py-4">
         <div class="card rounded-4 p-3">
             <div class="card-body">
                 <div class="my-card-header d-flex">
@@ -17,24 +17,43 @@
                     <a href="" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
                     <a href="" class="btn my-btn"><i class="fa-solid fa-file-csv me-1"></i>Export CSV</a>
                 </div>
-                <table class="table mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">Foto</th>
+                                <th scope="col">NIK</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Umur</th>
+                                <th scope="col">jenis kelamin</th>
+                                <th scope="col">Tanggal lahir</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Agama</th>
+                                <th scope="col">Pekerjaan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($data as $item)
+                              <tr>
+                                  <td>
+                                    <img src="{{ $item->image_path }}" alt="foto">
+                                  </td>
+                                  <td>{{ $item->nik }}</td>
+                                  <td>{{ $item->name }}</td>
+                                  <td>{{ \Carbon\Carbon::parse($item->birthdate)->age }}</td>
+                                  <td>{{ $item->gender }}</td>
+                                  <td>{{ $item->birthdate }}</td>
+                                  <td>{{ $item->address }}</td>
+                                  <td>{{ $item->religion }}</td>
+                                  <td>{{ $item->profession }}</td>
+                              </tr>
+                          @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="my-custom-pagination-style">
+                    {{ $data->links() }}
+                </div>
             </div>
         </div>
     </div>
