@@ -39,3 +39,5 @@ Route::group(['middleware'=>'auth'],function () {
     Route::get('/activity', [ActivityController::class, 'index']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+Route::get('/export-pdf', [HomeController::class, 'exportPDF'])->name('export-pdf');

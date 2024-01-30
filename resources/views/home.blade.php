@@ -22,10 +22,10 @@
                 </div>
                 <h5>Login sebagai : <span class="text-link">{{ Auth::user()->role->name }}</span></h5>
                 <div class="export-section d-flex">
-                    <a href="" class="btn my-btn me-3"><i class="fa-solid fa-file-csv me-1"></i>Import CSV</a>
-                    <a href="" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
+                    <a href="{{ route('export-pdf', ['page' => $data->currentPage()]) }}" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
                     <a href="" class="btn my-btn"><i class="fa-solid fa-file-csv me-1"></i>Export CSV</a>
                 </div>
+                <small class="text-link">Note : Export hanya mengunduh data yang tampil di halaman ini</small>
                 <div class="table-responsive">
                     <table class="table mt-3 table-transparent">
                         <thead>
