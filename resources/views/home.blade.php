@@ -14,8 +14,9 @@
                 <div class="my-card-header d-flex">
                     <h3 class="text-link">DATA</h3>
                     <div class="search-bar mb-3 ms-auto">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2 rounded-start-pill" type="search" placeholder="Search" aria-label="Search">
+                        <form action="/home" method="GET" class="d-flex" role="search">
+                            @csrf
+                            <input class="form-control me-2 rounded-start-pill" type="search" placeholder="Cari nama atau nik" aria-label="Search" name="keyword">
                             <button class="btn my-btn rounded-end-pill" type="submit" style="width: auto;">Search</button>
                         </form>
                     </div>

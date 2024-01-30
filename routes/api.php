@@ -15,8 +15,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::get('/home', [HomeController::class, 'show']);
+
+Route::get('/data', [HomeController::class, 'getData']);
+Route::post('/search', [HomeController::class, 'search']);

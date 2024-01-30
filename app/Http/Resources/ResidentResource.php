@@ -18,7 +18,7 @@ class ResidentResource extends JsonResource
             'id' => $this->id,
             'nik' => $this->nik,
             'name' => $this->name,
-            'image' => $this->image_path,
+            'image' => "http://127.0.0.1:8000/storage/" . $this->image_path,
             'gender' => $this->gender,
             'birthdate' => $this->birthdate,
             'address' => $this->address,
