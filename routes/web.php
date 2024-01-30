@@ -6,6 +6,7 @@ use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidentController;
+use App\Http\Controllers\ActivityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,6 @@ Route::group(['middleware'=>'auth'],function () {
     });
 
     Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/activity', [ActivityController::class, 'index']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });

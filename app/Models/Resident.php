@@ -20,5 +20,10 @@ class Resident extends Model
         'profession',
     ];
 
+    public function history()
+    {
+        return $this->belongsTo(History::class);
+    }
+
 
 }

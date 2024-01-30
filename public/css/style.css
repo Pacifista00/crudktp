@@ -106,6 +106,10 @@ body{
 /* end button */
 
 /* text & background */
+.active-link{
+    color: #FFFFFF !important;
+    border-bottom: 2px solid #749BC2;
+}
 .text-link{
     color: #4682A9;
 }

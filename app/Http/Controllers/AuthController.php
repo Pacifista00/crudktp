@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\History;
 
 class AuthController extends Controller
 {
@@ -24,7 +25,11 @@ class AuthController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
+            
+            History::create([
+                'activity' => 'Melakukan Login',
+                'user_id' => Auth::user()->id,
+            ]);
             return redirect()->intended('home');
         }
  
@@ -57,6 +62,10 @@ class AuthController extends Controller
             'username' => $request->username,
             'password' => bcrypt($request->password),
             'role_id' => 2,
+        ]);
+        History::create([
+            'activity' => 'Membuat akun',
+            'user_id' => $user->id,
         ]);
         return redirect('/');
 

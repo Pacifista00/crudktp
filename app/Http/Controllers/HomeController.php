@@ -10,9 +10,13 @@ class HomeController extends Controller
 {
     public function index(){
         $data = Resident::paginate(10);
-        return view('home', compact('data'));
+        return view('home', compact('data'),[
+            'active' => 'home'
+        ]);
     }
     public function addForm(){
-        return view('add');
+        return view('add',[
+            'active' => 'tambah'
+        ]);
     }
 }

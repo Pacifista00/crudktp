@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Resident;
+use App\Models\History;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,6 +16,10 @@ class ResidentController extends Controller
 
         if ($resident) {
             $resident->delete();
+            History::create([
+                'activity' => 'Menghapus Data KTP',
+                'user_id' => Auth::user()->id,
+            ]);
             return redirect('home')->with('success', 'Data telah terhapus.');
         } else {
             return redirect('home')->with('error', 'Data tidak ditemukan.');
@@ -65,7 +71,11 @@ class ResidentController extends Controller
             $data['image_path'] = 'resident_pictures/profile.jpg';
         }
 
-        Resident::create($data);
+        $resident = Resident::create($data);
+        History::create([
+            'activity' => 'Menambah Data KTP',
+            'user_id' => Auth::user()->id,
+        ]);
         return redirect('/home')
         ->with(['success' => 'Data berhasil ditambah.']);
     }
@@ -124,6 +134,10 @@ class ResidentController extends Controller
         }
 
         $resident->update($data);
+        History::create([
+            'activity' => 'Mengupdate Data KTP',
+            'user_id' => Auth::user()->id,
+        ]);
         return redirect('/home')
         ->with(['success' => 'Data berhasil diubah.']);
     }

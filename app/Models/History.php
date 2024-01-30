@@ -10,8 +10,16 @@ class History extends Model
     use HasFactory;
 
     protected $fillable = [
+        'activity',
         'user_id',
-        'resident_id',
     ];
     
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function resident()
+    {
+        return $this->hasMany(Resident::class);
+    }
 }
