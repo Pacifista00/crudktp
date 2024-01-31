@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResidentController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ExportImportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,8 @@ Route::group(['middleware'=>'auth'],function () {
     });
 
     Route::get('/home', [HomeController::class, 'index']);
-    Route::get('/export-pdf', [HomeController::class, 'exportPDF'])->name('export-pdf');
-    Route::get('/export-csv', [HomeController::class, 'exportCSV'])->name('export-csv');
+    Route::get('/export-pdf', [ExportImportController::class, 'exportPDF'])->name('export-pdf');
+    Route::get('/export-csv', [ExportImportController::class, 'exportCSV'])->name('export-csv');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
