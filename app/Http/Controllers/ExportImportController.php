@@ -53,7 +53,7 @@ class ExportImportController extends Controller
         if ($request->hasFile('file')) {
             Excel::import(new ResidentImport, $request->file('file'));
             History::create([
-                'activity' => 'Mengeksport data CSV',
+                'activity' => 'Mengimport data CSV',
                 'user_id' => Auth::user()->id,
             ]);
             return redirect('/home')->with('success', 'Data berhasil diimport!');
