@@ -125,9 +125,9 @@ class ResidentController extends Controller
             'profession' => $request->profession,
         ];
         if ($request->hasFile('photo')) {
-            $previousImagePath = $model->image_path;
+            $previousImagePath = $resident->image_path;
 
-            if ($previousImagePath && $previousImagePath != 'profile.jpg') {
+            if ($previousImagePath && $previousImagePath != 'resident_pictures/profile.jpg') {
                 Storage::delete($previousImagePath);
             }
             $data['image_path'] = $request->file('photo')->store('resident_pictures');

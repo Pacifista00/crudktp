@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg my-bg-blue">
     <div class="container">
-        <a class="title navbar-brand text-light" href="#">KTP MANAGER</a>
+        <a class="title navbar-brand text-light" href="/home">KTP MANAGER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

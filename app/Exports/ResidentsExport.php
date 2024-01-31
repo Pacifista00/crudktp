@@ -3,29 +3,39 @@
 namespace App\Exports;
 
 use App\Models\Resident;
-use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ResidentsExport implements FromCollection
+class ResidentsExport implements FromCollection, WithHeadings
 {
-    protected $keyword;
-    protected $page;
+    protected $residentId;
 
-    public function __construct($keyword = null, $page = 1)
+    public function __construct($residentId)
     {
-        $this->keyword = $keyword;
-        $this->page = $page;
+        $this->residentId = $residentId;
     }
 
     public function collection()
     {
-        $query = Resident::query();
+        // Gantilah query sesuai dengan kebutuhan Anda
+        return Resident::where('id', $this->residentId)->get();
+    }
 
-        if ($this->keyword) {
-            $query->where('name', 'like', '%' . $this->keyword . '%')
-                ->orWhere('nik', 'like', '%' . $this->keyword . '%');
-        }
-
-        return $query->latest()->paginate(10, ['*'], 'page', $this->page);
+    public function headings(): array
+    {
+        // Sesuaikan dengan nama kolom yang ada di tabel
+        return [
+            'id',
+            'nik',
+            'nama',
+            'foto',
+            'jenis kelamin',
+            'tanggal lahir',
+            'alamat',
+            'agama',
+            'pekerjaan',
+            'waktu dibuat',
+            'waktu diupdate',
+        ];
     }
 }

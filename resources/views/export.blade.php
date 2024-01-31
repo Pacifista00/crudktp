@@ -22,18 +22,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $item)
                 <tr>
-                    <td>{{ $item->nik }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->birthdate)->age }}</td>
-                    <td>{{ $item->gender }}</td>
-                    <td>{{ $item->birthdate }}</td>
-                    <td>{{ $item->address }}</td>
-                    <td>{{ $item->religion }}</td>
-                    <td>{{ $item->profession }}</td>
+                    <td>{{ $data->nik }}</td>
+                    <td>{{ $data->name }}</td>
+                    <td>{{ \Carbon\Carbon::parse($data->birthdate)->age }}</td>
+                    <td>{{ $data->gender }}</td>
+                    <td>{{ $data->birthdate }}</td>
+                    <td>{{ $data->address }}</td>
+                    <td>{{ $data->religion }}</td>
+                    <td>{{ $data->profession }}</td>
                 </tr>
-            @endforeach
         </tbody>
     </table>
 </body>

@@ -22,11 +22,7 @@
                     </div>
                 </div>
                 <h5>Login sebagai : <span class="text-link">{{ Auth::user()->role->name }}</span></h5>
-                <div class="export-section d-flex">
-                    <a href="{{ url('/export-pdf?keyword=' . request('keyword') . '&page=' . $data->currentPage()) }}" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
-                    <a href="{{ url('/export-csv?keyword=' . request('keyword') . '&page=' . $data->currentPage()) }}" class="btn my-btn"><i class="fa-solid fa-file-csv me-1"></i>Export CSV</a>
-                </div>
-                <small class="text-link">Note : Export hanya mengunduh data yang tampil di halaman ini</small>
+        
                 <div class="table-responsive">
                     <table class="table mt-3 table-transparent">
                         <thead>
@@ -61,9 +57,19 @@
                                         <button type="button" class="btn my-btn2 mb-1" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $item->id }}" style="width: 100%;">
                                             Hapus
                                         </button>
-                                        <button type="button" class="btn my-btn2" data-bs-toggle="modal" data-bs-target="#modalEdit{{$item->id}}" style="width: 100%;">
+                                        <button type="button" class="btn my-btn2 mb-1" data-bs-toggle="modal" data-bs-target="#modalEdit{{$item->id}}" style="width: 100%;">
                                             Edit
                                         </button>
+                                        <a href="/export-pdf/{{ $item->id }}">
+                                            <div class="btn my-btn2 mb-1" style="width: 100%;">
+                                                Export PDF
+                                            </div>
+                                        </a>
+                                        <a href="/export-csv/{{ $item->id }}">
+                                            <div class="btn my-btn2" style="width: 100%;">
+                                                Export CSV
+                                            </div>
+                                        </a>
                                     </td>
                                 </tr>
 
