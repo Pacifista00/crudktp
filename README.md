@@ -54,6 +54,21 @@ KTP Manager adalah website yang berfungsi sebagai sistem pengelola data KTP pend
    ```bash
    php artisan serve
 
+   Jalankan Aplikasi dengan mengetikkan http://127.0.0.1:8000/ di url browser.
+   
+
+## API
+1. **Return Data KTP**
+   ```bash
+   http://127.0.0.1:8000/api/data
+
+2. **Return Data KTP dengan pencarian**
+   kata kunci bisa berupa nama atau nik dari data yang ingin dicari.
+   ```bash
+   http://127.0.0.1:8000/api/search?keyword=[kata kunci]
+
+
+
 
    
 
