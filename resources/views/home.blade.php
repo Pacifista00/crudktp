@@ -23,8 +23,8 @@
                 </div>
                 <h5>Login sebagai : <span class="text-link">{{ Auth::user()->role->name }}</span></h5>
                 <div class="export-section d-flex">
-                    <a href="{{ route('export-pdf', ['page' => $data->currentPage()]) }}" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
-                    <a href="" class="btn my-btn"><i class="fa-solid fa-file-csv me-1"></i>Export CSV</a>
+                    <a href="{{ url('/export-pdf?keyword=' . request('keyword') . '&page=' . $data->currentPage()) }}" class="btn my-btn me-3"><i class="fa-solid fa-file-pdf me-1"></i>Export PDF</a>
+                    <a href="{{ url('/export-csv?keyword=' . request('keyword') . '&page=' . $data->currentPage()) }}" class="btn my-btn"><i class="fa-solid fa-file-csv me-1"></i>Export CSV</a>
                 </div>
                 <small class="text-link">Note : Export hanya mengunduh data yang tampil di halaman ini</small>
                 <div class="table-responsive">
@@ -101,7 +101,7 @@
                                             <div class="modal-body">
                                                 <div class="mb-1">
                                                     <label for="photo" class="col-form-label">Foto:</label>
-                                                    <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                                                    <input type="file" class="form-control" id="photo" name="photo" >
                                                 </div>
                                                 <div class="mb-1">
                                                     <label for="nik" class="col-form-label">NIK:</label>
@@ -113,7 +113,7 @@
                                                 </div>
                                                 <div class="mb-1">
                                                     <label for="gender" class="col-form-label">Jenis Kelamin:</label>
-                                                    <select class="form-select" aria-label="Default select example" name="gender">
+                                                    <select class="form-select" aria-label="Default select example" name="gender" id="gender">
                                                         <option value="{{ $item->gender }}" >{{ $item->gender }}</option>
                                                         <option value="Pria">Pria</option>
                                                         <option value="Wanita">Wanita</option>
@@ -129,7 +129,7 @@
                                                 </div>
                                                 <div class="mb-1">
                                                     <label for="religion" class="col-form-label">Agama:</label>
-                                                    <select class="form-select" aria-label="Default select example" name="religion">
+                                                    <select class="form-select" aria-label="Default select example" id="religion" name="religion">
                                                         <option value="{{ $item->religion }}">{{ $item->religion }}</option>
                                                         <option value="Islam">Islam</option>
                                                         <option value="Kristen">Kristen</option>

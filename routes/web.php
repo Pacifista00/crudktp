@@ -33,11 +33,12 @@ Route::group(['middleware'=>'auth'],function () {
         Route::post('/resident/{id}/update', [ResidentController::class, 'update']);
         Route::get('/create', [HomeController::class, 'addForm']);
         Route::post('/create', [ResidentController::class, 'store']);
+        Route::get('/activity', [ActivityController::class, 'index']);
     });
 
     Route::get('/home', [HomeController::class, 'index']);
-    Route::get('/activity', [ActivityController::class, 'index']);
+    Route::get('/export-pdf', [HomeController::class, 'exportPDF'])->name('export-pdf');
+    Route::get('/export-csv', [HomeController::class, 'exportCSV'])->name('export-csv');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
-Route::get('/export-pdf', [HomeController::class, 'exportPDF'])->name('export-pdf');

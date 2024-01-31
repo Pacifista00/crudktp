@@ -30,7 +30,7 @@
                             </div>
                             <div class="mb-1">
                                 <label for="gender" class="col-form-label">Jenis Kelamin:</label>
-                                <select class="form-select" aria-label="Default select example" name="gender">
+                                <select class="form-select" aria-label="Default select example" id="gender" name="gender">
                                     <option value="" disabled selected hidden>Pilih salah satu</option>
                                     <option value="Pria">Pria</option>
                                     <option value="Wanita">Wanita</option>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="mb-1">
                                 <label for="religion" class="col-form-label">Agama:</label>
-                                <select class="form-select" aria-label="Default select example" name="religion">
+                                <select class="form-select" aria-label="Default select example" id="religion" name="religion">
                                     <option value="" disabled selected hidden>Pilih salah satu</option>
                                     <option value="Islam">Islam</option>
                                     <option value="Kristen">Kristen</option>

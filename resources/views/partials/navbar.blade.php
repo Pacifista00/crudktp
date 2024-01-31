@@ -6,11 +6,12 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                @if (auth()->user()->role_id == 1)
                 <li class="nav-item">
                     <a class="fs-6 nav-link mx-1 text-light {{ $active == 'home' ? 'active-link' : ''}}" href="/home">DATA KTP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="fs-6 nav-link mx-1 text-light {{ $active == 'tambah' ? 'active-link' : ''}}" href="/create">TAMBAH</a>
+                    <a class="fs-6 nav-link mx-1 text-light {{ $active == 'tambah' ? 'active-link' : '';}}" href="/create">TAMBAH</a>
                 </li>
                 <li class="nav-item">
                     <a class="fs-6 nav-link mx-1 text-light {{ $active == 'activity' ? 'active-link' : ''}}" href="/activity">AKTIVITAS</a>
@@ -18,6 +19,7 @@
                 <li class="nav-item">
                     <a class="fs-6 nav-link mx-1 text-light {{ $active == 'import' ? 'active-link' : ''}}" href="/import">IMPORT</a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <form action="/logout" method="POST">
                         @csrf

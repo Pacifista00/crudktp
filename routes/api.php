@@ -18,4 +18,4 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/data', [HomeController::class, 'getData']);
-Route::post('/search', [HomeController::class, 'search']);
+Route::get('/search', [HomeController::class, 'search']);
