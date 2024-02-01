@@ -12,6 +12,14 @@ KTP Manager adalah website yang berfungsi sebagai sistem pengelola data KTP pend
 - laravel-dompdf
 - MaatWebsite
 
+## Data Login
+1. **Admin**
+   username : admin
+   password : admin123
+2. **User**
+   username : user
+   password : user123
+
 ## Cara Penggunaan
 
 1. **Persiapan Lingkungan:**
